@@ -57,7 +57,7 @@ MIDDLEWARE_CLASSES = [
 # Add this to tell Django where to redirect after 
 # successful login
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/log/'
 
 ROOT_URLCONF = 'authtest.urls'
 
