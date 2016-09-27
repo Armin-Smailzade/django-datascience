@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block content %}
+
+		<div class="container">
+			
+			{% if form.errors %}
+				<div class="alert alert-danger">
+			  
+				    {% for field in form %}
+				        {% for error in field.errors %}
+				            <div class="alert alert-error">
+				                <!-- <strong>{{ error|escape }}</strong> -->
+				                <strong>{{ field.name|escape }} field is required</strong>
+				                <!-- <strong>{{ error|escape }}</strong> -->
+				            </div>
+				        {% endfor %}
+				    {% endfor %}
+				    {% for error in form.non_field_errors %}
+				        <div class="alert alert-error">
+				            <strong>{{ error|escape }}</strong>
+				        </div>
+				    {% endfor %}
+				
+				</div>
+			{% endif %}
+
+			<div class="">
+
+				<h2>Breast Cancer Prediction Form</h2>
+				<p align="left"></p>
+				
+			</div>
+
+			<div class="alert alert-info">
+			  <strong>Welcome</strong> to our online breast cancer survivability predictor. The calculator is based on data obtained from Surveillance Epidemiology and End Results (SEER) of the National Cancer Institute. The National Cancer Institute is responsible to collect cancer statistics in the United States. The data contains breast cancer records of nearly 770,000 patients. The predictor estimates the survivability using subset of 13 patient attributes out of 134 attributes in the SEER data. The 13 attributes were carefully selected using attribute selection techniques.
+			</div>
+
+			<div class="alert alert-danger">
+			  <strong>Disclaimer:</strong> The results of the predictor are estimates based on data consisting of a large number of breast cancer records. All results are provided for informational purposes only, in furtherance of the developers' educational mission, and are not meant to replace the advice of a medical doctor. The developers may not be held responsible for any medical decisions based on this outcome calculator.
+			</div>
+
+			<!-- <div class="row" >
+
+				<div class="col-md-12" id="container2" align="center" style="width: 700px; height: 400px; margin-left: 200px"></div>
+
+			</div> -->
+
+			<div class="col-sm-12" style="margin-bottom: 100px;">
+
+				<form role="form" action="/calculator/form/" align="left" method="POST">{% csrf_token %}
+
+					<div class="col-sm-6">
+
+						<div class="form-group">
+						    <label for="exampleSelect1">Race</label>
+						    	{{ form.race }}
+						</div>
+
+						<div class="form-group">
+						    <label for="exampleSelect1">Vital Status Record</label>
+						    	{{ form.vitalStatusRecord }}
+						</div>
+
+						<div class="form-group">
+						    <label for="exampleSelect1">Grade</label>
+						    	{{ form.grade }}
+						</div>
+
+						<div class="form-group">
+						    <label for="exampleSelect1">Marital Status</label>
+						    	{{ form.maritalStatus }}
+						</div>
+
+						<div class="form-group">
+						    <label for="exampleSelect1">Histologic Type</label>
+								{{ form.histologicType }}
+						</div>
+
+						<div class="form-group">
+						    <label for="exampleSelect1">Behavior Code</label>
+								{{ form.behaviorCode }}
+						</div>
+
+						<div class="form-group">
+						    <label for="exampleSelect1">CS EOD Extension</label>
+								{{ form.csExtension }}
+						</div>
+
+					</div>
+
+					<div class="col-sm-6">
+
+					  	<div class="form-group">
+					    	<label for="exampleSelect1">CS EOD Lymph Node</label>
+								{{ form.csLymphNode }}
+					  	</div>
+
+					  	<div class="form-group">
+					    	<label for="exampleSelect1">Radiation</label>
+								{{ form.radiation }}
+					  	</div>
+
+					  	<div class="form-group">
+					    	<label for="exampleSelect1">SEER Historic Stage A</label>
+								{{ form.seerHistoricStageA }}
+					  	</div>
+
+					  	<div class="form-group">
+					    	<label for="exampleSelect1">Age at Diognosis</label>
+								{{ form.ageAtDiognosis }}
+					  	</div>
+
+					  	<div class="form-group">
+					    	<label for="exampleSelect1">CS EOD Tumor Size</label>
+								{{ form.csTumorSize }}
+					  	</div>
+
+					  	<div class="form-group">
+					    	<label for="exampleSelect1">Regional Nodes Positive</label>
+								{{ form.regionalNodesPositive }}
+					  	</div>
+
+					  	<div class="form-group">
+					    	<label for="exampleSelect1">Regional Nodes Examined</label>
+								{{ form.regionalNodesExamined }}
+					  	</div>
+
+					  	<div class="form-group">
+					    	<label for="exampleSelect1">Survival Months</label>
+								{{ form.survivalMonths }}
+					  	</div>
+
+					  <button type="submit" value="Analyse" class="btn btn-primary">Submit Form</button>
+				  </div>
+
+
+				</form>
+
+			</div>
+
+		</div>
+
+
+{% endblock %}
+
+
+
+{% block javascript %}
+
+<!-- 	<style type="text/css">
+	
+		body {
+	    margin-top: 10px;
+	    margin-bottom: 200px;
+	    margin-right: 50px;
+	    margin-left: 50px;
+		}
+
+		.developer{
+			font-size: 16px;
+		}
+
+		p {
+	   		font-size: 16px;
+	   		/*margin-top: 200px;*/
+		}
+
+		.jumbotron p {
+		    color: black;
+		    font-size: 17px;
+		    margin-top: 20px;
+	    }
+
+	    div {
+	    	font-size: 16px;
+	    }
+	</style> -->
+	
+{% endblock %}

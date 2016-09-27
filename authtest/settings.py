@@ -23,9 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'm9+n%vprx)%s^un=9pj4$_uzr%c7umisf527(ns&v(f1qur-0i'
 
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -41,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'log',
+    'calculator',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -57,7 +58,7 @@ MIDDLEWARE_CLASSES = [
 # Add this to tell Django where to redirect after 
 # successful login
 
-LOGIN_REDIRECT_URL = '/log/'
+LOGIN_REDIRECT_URL = '/'
 
 ROOT_URLCONF = 'authtest.urls'
 
@@ -128,3 +129,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_server')

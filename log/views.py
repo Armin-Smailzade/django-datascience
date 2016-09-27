@@ -10,6 +10,7 @@ from django.contrib.auth import login as authLogin
 from log.forms import UserCreateForm, LoginForm
 
 # Create your views here.
+
 # this login required decorator is to not allow to any  
 # view without authenticating
 @login_required(login_url="log/login/")

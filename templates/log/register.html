@@ -43,29 +43,32 @@
                <form method="post" action="">
                   {% csrf_token %}
                   <p class="bs-component">
-                  <table>
-                     <tr>
-                        <td>{{ form.username.label_tag }}</td>
-                        <td>{{ form.username }}</td>
-                     </tr>
-                     <tr>
-                        <td>{{ form.password1.label_tag }}</td>
-                        <td>{{ form.password1 }}</td>
-                     </tr>
-                     <tr>
-                        <td>{{ form.password2.label_tag }}</td>
-                        <td>{{ form.password2 }}</td>
-                     </tr>
-                     <tr>
-                        <td>{{ form.email.label_tag }}</td>
-                        <td>{{ form.email }}</td>
-                     </tr>
-                  </table>
+                    <table>
+                       <tr>
+                          <td>{{ form.username.label_tag }}</td>
+                          <td>{{ form.username }}</td>
+                       </tr>
+                       <tr>
+                          <td>{{ form.password1.label_tag }}</td>
+                          <td>{{ form.password1 }}</td>
+                       </tr>
+                       <tr>
+                          <td>{{ form.password2.label_tag }}</td>
+                          <td>{{ form.password2 }}</td>
+                       </tr>
+                       <tr>
+                          <td>{{ form.email.label_tag }}</td>
+                          <td>{{ form.email }}</td>
+                       </tr>
+                    </table>
                   </p>
+
                   <p class="bs-component">
-                  <center><input class="btn btn-success btn-sm" type="submit" value="Sign Up" /></center>
+                    <center><input class="btn btn-success btn-sm" type="submit" value="Sign Up" /></center>
                   </p>
+
                   <p class="bs-component">
+                     <center>Already have an account? </center>
                      <center><a href="{% url 'login' %}">Sign In!</a></center>
                   </p>
                   <input type="hidden" name="register" value="{{ register }}" />

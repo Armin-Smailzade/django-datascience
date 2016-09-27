@@ -9,8 +9,9 @@ from . import views
 
 # We are adding a URL called /home
 urlpatterns = [
-    url(r'^log/$', views.home, name='home'),
+    url(r'^$', views.home, name='home'),
     url(r'^log/index/$', views.index, name='index'),
+    
     url(r'^log/register/$', views.register, name='register'),
 
     url(r'^log/login/$', authView.login, {'template_name': 'log/login.html', 'authentication_form': LoginForm}, name='login'),
