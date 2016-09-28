@@ -9,4 +9,5 @@ urlpatterns = [
     
     url(r'', include('log.urls')),
     url(r'^calculator/', include('calculator.urls')),
+    url(r'^map/', include('map.urls')),
 ]

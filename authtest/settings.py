@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'log',
     'calculator',
+    'map',
 ]
 
 MIDDLEWARE_CLASSES = [
